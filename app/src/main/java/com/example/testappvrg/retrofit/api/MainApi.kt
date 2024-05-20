@@ -2,8 +2,12 @@ package com.example.testappvrg.retrofit.api
 
 import com.example.testappvrg.retrofit.model.RedditPost
 import retrofit2.http.GET
+import retrofit2.http.Query
 
-interface MainApi {
-    @GET("popular/top.json")
-    suspend fun getTopPosts():RedditPost
+internal interface MainApi {
+    @GET("top.json")
+    suspend fun getTopPosts(
+        @Query("after") after: String?,
+        @Query("limit") limit: Int
+    ): RedditPost
 }

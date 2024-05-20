@@ -1,23 +1,26 @@
 package com.example.testappvrg.retrofit.model
 
+import com.google.gson.annotations.SerializedName
 
-data class RedditPost(
+
+internal data class RedditPost(
     val data: Data
 )
 
-data class Data(
+internal data class Data(
     val children: List<Children>
 )
 
-data class Children(
+internal data class Children(
     val data: ChildData
 )
 
-data class ChildData(
+internal data class ChildData(
     val subreddit: String,
     val selftext: String?,
     val title: String,
     val thumbnail: String,
-    val numComments: Long,
-    val createdUtc: Int,
+    @SerializedName("num_comments") val numComments: Int,
+    @SerializedName("created_utc") val createdUtc: Int,
+    val name: String,
 )

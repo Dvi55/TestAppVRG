@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TestAppVRG</string>
+    <string name="num_comments">%1$d comments</string>
+    <string name="x_hours_ago">%1$d hours ago</string>
 </resources>
